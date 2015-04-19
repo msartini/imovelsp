@@ -1,0 +1,500 @@
+   41  ls
+   42  ls -la
+   43  cd ..
+   44  ls
+   45  cd common/
+   46  cd classes/
+   47  ls
+   48  ls -la
+   49  cd ..
+   50  clear
+   51  cd ..
+   52  cd ..
+   53  ls
+   54  cd projetoteste/
+   55  ls
+   56  cd webapp/
+   57  ls
+   58  ls
+   59  cd ..
+   60  ls
+   61  rm -rf common/
+   62  ls
+   63  cd ..
+   64  ls
+   65  clear
+   66  ls
+   67  ls
+   68  clear
+   69  ls
+   70  ls
+   71  clear
+   72  ls
+   73  ls
+   74  cd common/
+   75  ls
+   76  cd classes/
+   77  ls
+   78  cd ..
+   79  ls
+   80  cd ..
+   81  clear
+   82  ls
+   83  rm -rf common/
+   84  ls
+   85  ls
+   86  clear
+   87  cd projetoteste/
+   88  cd ..
+   89  ls
+   90  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes/boilerplate/ common/classes/boilerplate
+   91  ls
+   92  ls
+   93  ls
+   94  rm -rf common/
+   95  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes/ common/classes
+   96  clear
+   97  ls
+   98  ll
+   99  rm -rf projetoteste/
+  100  ls
+  101  clear
+  102  ll
+  103  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/boilerplate.corp.folha.com.br/ 
+  104  cd ..
+  105  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/boilerplate.corp.folha.com.br/ 
+  106  ls
+  107  clear
+  108  ls
+  109  ls
+  110  clear
+  111  ls
+  112  ls
+  113  cd mxzypkt.corp.folha.com.br/
+  114  ls
+  115  rm -rf common/
+  116  clear
+  117  cd ..
+  118  ls
+  119  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes/ common/classes
+  120  clear
+  121  cd ~/Downloads/
+  122  ls
+  123  ll
+  124  sudo cp dbeaver-3.3.1-linux.gtk.x86_64.zip /opt/
+  125  cd /opt/
+  126  ls
+  127  mkdir dbeaver
+  128  sudo mkdir dbeaver
+  129  sudo cp dbeaver-3.3.1-linux.gtk.x86_64.zip  dbeaver
+  130  ls
+  131  ls dbeaver
+  132  rm -r dbeaver-3.3.1-linux.gtk.x86_64.zip 
+  133  sudo rm -r dbeaver-3.3.1-linux.gtk.x86_64.zip 
+  134  ll
+  135  cd dbeaver/
+  136  ls
+  137  unzip dbeaver-3.3.1-linux.gtk.x86_64.zip 
+  138  sudo unzip dbeaver-3.3.1-linux.gtk.x86_64.zip 
+  139  ls
+  140  rm -rf dbeaver
+  141  sudo rm -rf dbeaver
+  142  ls
+  143  xp dbeaver-3.3.1-linux.gtk.x86_64.zip /opt/
+  144  cp dbeaver-3.3.1-linux.gtk.x86_64.zip /opt/
+  145  sudo cp dbeaver-3.3.1-linux.gtk.x86_64.zip /opt/
+  146  ls
+  147  cd ..
+  148  ls
+  149  rm -rf dbeaver
+  150  sudo rm -rf dbeaver
+  151  ls
+  152  unzip dbeaver-3.3.1-linux.gtk.x86_64.zip 
+  153  sudo unzip dbeaver-3.3.1-linux.gtk.x86_64.zip 
+  154  ls
+  155  dbeaver/
+  156  cd dbeaver/
+  157  ls
+  158  ll
+  159  ./dbeaver 
+  160  cd ~
+  161  ls
+  162  ls -la
+  163  vim .profile 
+  164  cat .profile 
+  165  dbadm
+  166  clear
+  167  dbadm
+  168  vim .profile 
+  169  clear
+  170  dbadm
+  171  /opt/dbeaver/dbeaver 
+  172  cd /etc/
+  173  subl fstab
+  174  ls
+  175  clear
+  176  ls
+  177  clear
+  178  cd /etc/
+  179  ls
+  180  subl fstab
+  181  sudo reboot
+  182  subl /etc/fstab
+  183  sudo reboot
+  184  cd ~/.ssh/
+  185  ls
+  186  clear
+  187  ls
+  188  vim known_hosts 
+  189  cd /media/
+  190  ls
+  191  cd all_devs/
+  192  cd 80/
+  193  ls
+  194  ll
+  195  clear
+  196  ll
+  197  cd mxzypkt.corp.folha.com.br/
+  198  ls
+  199  ll
+  200  ls -la
+  201  rm -rf boilerplate.corp.folha.com.br/
+  202  çs
+  203  ls
+  204  cd ..
+  205  ll
+  206  rm -rf mxzypkt.corp.folha.com.br/
+  207  ls
+  208  clear
+  209  ls
+  210  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/mxzypkt.corp.folha.com.br/ --depth empty
+  211  ll
+  212  cd mxzypkt.corp.folha.com.br/
+  213  ls
+  214  cd ..
+  215  cd mxzypkt.corp.folha.com.br/
+  216  ls
+  217  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/boilerplate.corp.folha.com.br/ sartini
+  218  cd ..
+  219  ls
+  220  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/ --depth-empty
+  221  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/ --depth empty
+  222  ls
+  223  cd common/
+  224  svn up classes
+  225  ls
+  226  cd classes/
+  227  ls
+  228  ls
+  229  clear
+  230  ls
+  231  cd ..
+  232  ls
+  233  rm -rf classes/
+  234  clear
+  235  ls
+  236  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes --depth-empty
+  237  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes --depth empty
+  238  cd classes/
+  239  ls
+  240  ls -la
+  241  clear
+  242  ls
+  243  clear
+  244  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes/boilerplate/ sartini
+  245  ls
+  246  cd sartini/
+  247  ls
+  248  cd ..
+  249  cd ..
+  250  cd ..
+  251  ls
+  252  rm -rf boilerplate.corp.folha.com.br/
+  253  clear
+  254  ll
+  255  cd mxzypkt.corp.folha.com.br/
+  256  ls
+  257  cd ..
+  258  ls
+  259  cd common/
+  260  cd classes/
+  261  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes/ --depth files
+  262  ls
+  263  rm -rf classes/
+  264  cd ..
+  265  cleare
+  266  clear
+  267  ls
+  268  cd classes/
+  269  ls
+  270  cd sartini/
+  271  ls
+  272  cd ..
+  273  cd ..
+  274  clear
+  275  cd ..
+  276  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/classes/ --depth files
+  277  cd common/
+  278  ls
+  279  clear
+  280  ls
+  281  clear
+  282  mkdir includes
+  283  cd includes/
+  284  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/includes/boilerplate/
+  285  ls
+  286  ls
+  287  rm -rf boilerplate/
+  288  ls
+  289  clear
+  290  ls
+  291  ls
+  292  mkdir sartini
+  293  cd sartini/
+  294  svn co http://svn.ops.corp.folha.com.br/svn/dev_htdocs/common/includes/boilerplate/1/
+  295  ping sql_dev_boilerplate_webapp_master
+  296  ln -s /media/all_devs/80/ /home/marciosartini/Desktop/
+  297  ls
+  298  cd /media/all_devs
+  299  ls
+  300  ll
+  301  cd 80/
+  302  ls
+  303  cd ..
+  304  ll
+  305  cd /home/marciosartini/
+  306  ls
+  307  ll
+  308  cd Desktop/
+  309  ls
+  310  cd 80/
+  311  ls
+  312  cd ..
+  313  ll
+  314  ls
+  315  ls ~/Downloads/
+  316  cd /media/all_devs/80/
+  317  ls
+  318  cd mxzypkt.corp.folha.com.br/
+  319  ls
+  320  cp ~/Downloads/imovelsp.zip  .
+  321  ls
+  322  unzip imovelsp.zip 
+  323  clear
+  324  ls
+  325  rm -r imovelsp.zip 
+  326  ll
+  327  composer
+  328  cd ~
+  329  ls
+  330  sudo apt-get install composer
+  331  curl -sS https://getcomposer.org/installer | php
+  332  sudo apt-get install curl
+  333  curl -sS https://getcomposer.org/installer | php
+  334  mv composer.phar /usr/local/bin/composer
+  335  ll
+  336  mv composer.phar /usr/local/bin/composer
+  337  sudo mv composer.phar /usr/local/bin/composer
+  338  clear
+  339  cd /media/all_devs/80/
+  340  ls
+  341  cd mxzypkt.corp.folha.com.br/
+  342  ls
+  343  clear
+  344  clear
+  345  ls
+  346  cp -r imovelsp/ sartini/
+  347  cd sartini/
+  348  ls
+  349  ll
+  350  cd ..
+  351  ls
+  352  clear
+  353  ll
+  354  rm -rf imovelsp/
+  355  ls
+  356  ls -la
+  357  rm -r __MACOSX/
+  358  ls
+  359  clear
+  360  ll
+  361  ls -la
+  362  clear
+  363  cd sartini/imovelsp/
+  364  ls
+  365  clear
+  366  composer install
+  367  /usr/local/bin/composer install
+  368  ls
+  369  cd local/
+  370  /usr/local/bin/composer install
+  371  cd ~
+  372  clear
+  373  composer global require "laravel/installer=~1.1"
+  374  cd /media/all_devs/80
+  375  ls
+  376  cd mxzypkt.corp.folha.com.br/
+  377  ls
+  378  cd sartini/
+  379  clear
+  380  ls
+  381  clear
+  382  ls
+  383  clear
+  384  ls
+  385  cd imovelsp/
+  386  composer install
+  387  /usr/local/bin/composer install
+  388  cd local/
+  389  /usr/local/bin/composer install
+  390  clear
+  391  ls
+  392  cd .
+  393  cd ..
+  394  clear
+  395  ls
+  396  cd ..
+  397  clear
+  398  composer create-project laravel/laravel laraproject --prefer-dist
+  399  clear
+  400  ls
+  401  cd laraproject/
+  402  ls
+  403  ll
+  404  cd public/
+  405  ls
+  406  cd ..
+  407  clear
+  408  ls
+  409  ls
+  410  clear
+  411  ls
+  412  cd bootstrap/
+  413  ls
+  414  clear
+  415  ls
+  416  cd ..
+  417  clear
+  418  cd ~
+  419  ls
+  420  clear
+  421  apache --version
+  422  sudo apt-get install  apache
+  423  sudo apt-get install  apache2
+  424  clear
+  425  ls
+  426  clear
+  427  ls
+  428  apt-get install php5-mysql php5-curl php5-gd
+  429  sudo apt-get install php5-mysql php5-curl php5-gd
+  430  php -v
+  431  clear
+  432  ls
+  433  mysql -v
+  434  sudo apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql
+  435  apachectl -v
+  436  clear
+  437  mysql -v
+  438  mysql --version
+  439  clear
+  440  ls
+  441  clear
+  442  ls
+  443  clkear
+  444  clear
+  445  ls
+  446  clear
+  447  ll
+  448  mysql -uroot -p
+  449  clear
+  450  ls
+  451  cd workspace/
+  452  ls
+  453  cd ..
+  454  ls
+  455  ls -la
+  456  history 
+  457  cd workspace/
+  458  ls
+  459  composer create-project laravel/laravel laraproject --prefer-dist
+  460  sudo apt-get install php5-mcrypt
+  461  sudo php5enmod mcrypt
+  462  composer create-project laravel/laravel laraproject --prefer-dist
+  463  ls
+  464  rm -rf laraproject/
+  465  clear
+  466  composer create-project laravel/laravel laraproject --prefer-dist
+  467  ls
+  468  cd laraproject/
+  469  ll
+  470  clear
+  471  cd /etc/
+  472  ls
+  473  cd apache2/
+  474  ls
+  475  ll
+  476  open .
+  477  cd ..
+  478  subl apache2/
+  479  cd ~/workspace/
+  480  ls
+  481  clear
+  482  ls
+  483  clear
+  484  ls
+  485  pwd
+  486  sudo apachectl restart
+  487  sudo service apache2 restart 
+  488  clear
+  489  sudo service apache2 restart 
+  490  sudo service apache2 restart 
+  491  pwd
+  492  sudo service apache2 restart 
+  493  clear
+  494  aptitude install php5 libapache2-mod-php5
+  495  sudo aptitude install php5 libapache2-mod-php5
+  496  tail -f /var/log/apache2/error.log 
+  497  cd /var/log/
+  498  cd apache2/
+  499  ls
+  500  subl error.log 
+  501  cd workspace/
+  502  subl .
+  503  tail -f /var/log/apache2/error.log 
+  504  cd /var/log/apache2/
+  505  open error.log 
+  506  subl error.log 
+  507  subl error.log 
+  508  subl error.log 
+  509  clear
+  510  subl error.log 
+  511  cd ~/workspace/
+  512  ls
+  513  cd imovelsp/
+  514  ls
+  515  ll
+  516  cd local/
+  517  ls
+  518  ll
+  519  mysql -uroot -p
+  520  php artisan migrate:make create_blogs_table --table=blogs --create
+  521  php artisan migrate
+  522  cle3ar
+  523  clear
+  524  cle3ar
+  525  clear
+  526  php artisan migrate
+  527  ls
+  528  ll
+  529  subl /var/log/apache2/error.log 
+  530  ls
+  531  history 
+  532  ls
+  533  cd..
+  534  ls
+  535  cd ..
+  536  ls
+  537  clear
+  538  teste.txt < history
+  539  cp teste.txt < history
+  540  history >> teste.txt
