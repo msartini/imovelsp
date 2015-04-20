@@ -7,5 +7,3 @@ interface UserRepositoryInterface {
 	public function findFirst();
 	
 }
-
-?>

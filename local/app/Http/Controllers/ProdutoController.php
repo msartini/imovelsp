@@ -18,7 +18,7 @@ use App\Http\Repositories\DbUserRepository;
 
 class ProdutoController extends Controller {
 
-	private $users;
+	protected $users;
 
     public function __construct(DbUserRepository $dbUserRepository) {
     	$this->users = $dbUserRepository ;

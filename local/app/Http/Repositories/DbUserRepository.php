@@ -2,8 +2,6 @@
 use App\Http\Interfaces\UserRepositoryInterface;
 use App\User;
 
-
-
 class DbUserRepository implements UserRepositoryInterface {
     
 	public function all(){
@@ -14,4 +12,3 @@ class DbUserRepository implements UserRepositoryInterface {
 		return User::find(1)->toArray();
 	}
 }
-?>

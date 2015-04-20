@@ -14,10 +14,10 @@ class CreateMediasTable extends Migration {
 	{
 		Schema::create( 'medias' , function( Blueprint $table )
 		{
-			$table->increments('id') ;
-			$table->timestamps() ;
-            $table->string('arquivo', 200) ;
-            $table->string('extensao', 4)->default('pdf') ;
+                    $table->increments('id') ;
+                    $table->timestamps() ;
+                    $table->string('arquivo', 200) ;
+                    $table->string('extensao', 4)->default('pdf') ;
 		});
 	}
 

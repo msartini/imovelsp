@@ -14,21 +14,29 @@
 
  
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index') ;
 
-Route::get('profile', 'ProfileController@index');
+Route::get('profile', 'ProfileController@index') ;
 
-Route::get('perfil', 'ProfileController@perfil');
+Route::get('perfil', 'ProfileController@perfil') ;
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'HomeController@index') ;
 
 Route::get('produtos', 'ProdutoController@index') ;
 
-Route::get('listagemImoveis', 'HomeController@listagemImoveis');
+Route::get('listagemImoveis', 'HomeController@listagemImoveis') ;
 
-Route::get('usuario', 'UsuarioController@index');
+Route::get('usuario', 'UsuarioController@index') ;
 
-Route::get('arquivos', 'MediaController@index');
+Route::get('fornecedor/cadastro', 'FornecedorController@index') ;
+
+/* Usuário enviou os dados para serem salvos no banco */
+Route::post('fornecedor', 'FornecedorController@store') ;
+Route::get('fornecedor', 'FornecedorController@show') ;
+
+
+
+Route::get('arquivos', 'MediaController@index') ;
 
 
 
