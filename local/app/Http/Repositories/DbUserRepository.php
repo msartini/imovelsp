@@ -5,6 +5,7 @@ use App\User;
 
 
 class DbUserRepository implements UserRepositoryInterface {
+    
 	public function all(){
 		return User::all()->toArray();
 	}
