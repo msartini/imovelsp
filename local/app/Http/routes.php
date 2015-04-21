@@ -32,6 +32,7 @@ Route::get('fornecedor/cadastro', 'FornecedorController@index') ;
 
 /* Usuário enviou os dados para serem salvos no banco */
 Route::post('fornecedor', 'FornecedorController@store') ;
+
 Route::get('fornecedor', 'FornecedorController@show') ;
 
 

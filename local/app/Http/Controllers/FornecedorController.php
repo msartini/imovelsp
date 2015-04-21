@@ -6,7 +6,8 @@
  * @author marciosartini
  */
 use Illuminate\Http\Request ;
-use Illuminate\Routing\Controller;
+
+//use Illuminate\Routing\Controller;
 
 
 class FornecedorController extends Controller {

@@ -12,8 +12,14 @@
                    Arquivos
                    <div>
                         @foreach($files as $file)
-                            {{ $file->arquivo }}
+                            {{ $file->arquivo }} <br />
                         @endforeach
+                   </div>
+                   <br>
+                   <div>
+                        <hr />
+                        {{ $primeiro->id }} - {{ $primeiro->extensao }}
+                      
                    </div>
                 </div>
             </div>

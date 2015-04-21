@@ -5,7 +5,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use App\Http\Repositories\MediaRepository;
+use App\MediaDTO;
  
 
 class MediaController extends Controller {
@@ -15,24 +16,30 @@ class MediaController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+	protected $media;
+
+	public function __construct( MediaRepository $media ) {
+		$this->media = $media;
+	}
+
 	public function index()
 	{     
-            //$arquivo = new Media();
-            //$arquivo->nome = "Arquivo do word";
-            //$arquivo.save();
-            $arquivos = new Media(); 
-            $arquivos->arquivo = "documento";
-            $arquivos->save() ;
-            
-            $files = $arquivos->all() ;
+          
+
+			$dados = new MediaDTO();
+			$dados->setId(13);
+			$dados->setArquivo("DOCUMENTO DO PPT numero DOIS - ALTERADO");
+			$dados->setExtensao("ppt");
+            $this->media->createOrUpdate( $dados );	
+
+            $files = $this->media->all();
             
             $titulo = "Lista arquivos de mídia" ; 
+
+            $primeiro = $this->media->findFirst();
             
-            //print_r( $arquivos->get_element_by_rg() ) ;
-            
-            //return view( 'media' )->with( 'files' , $files );
-            
-            return view( 'media' , compact( 'titulo' , 'files') );
+            return view( 'media' , compact( 'titulo' , 'files', 'primeiro' ) );
             
 	}
   

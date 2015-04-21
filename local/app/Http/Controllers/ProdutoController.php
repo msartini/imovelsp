@@ -18,9 +18,9 @@ use App\Http\Repositories\DbUserRepository;
 
 class ProdutoController extends Controller {
 
-	protected $users;
+	protected $users ;
 
-    public function __construct(DbUserRepository $dbUserRepository) {
+    public function __construct( DbUserRepository $dbUserRepository ) {
     	$this->users = $dbUserRepository ;
         $this->middleware( "guest" ) ;
     }
@@ -30,7 +30,7 @@ class ProdutoController extends Controller {
     	var_dump( $this->users->all() ) ;
     	var_dump( $this->users->findFirst() ) ;
 
-   		return "teste";
+   		return "teste" ;
        //return view( "produtos" ) ;
        
     }
