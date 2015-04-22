@@ -5,9 +5,9 @@ class MediaDTO {
 
     private $id;
 
-	private $arquivo;
+    private $arquivo;
 
-	private $extensao;
+    private $extensao;
 
 
     public function getId()

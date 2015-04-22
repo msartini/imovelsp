@@ -12,14 +12,23 @@
                    Arquivos
                    <div>
                         @foreach($files as $file)
-                            {{ $file->arquivo }} <br />
+                        {{ $file->arquivo }} <br />
                         @endforeach
                    </div>
                    <br>
                    <div>
                         <hr />
+                        @if (count($primeiro))
                         {{ $primeiro->id }} - {{ $primeiro->extensao }}
-                      
+                        @endif
+                   </div>
+                   
+                   <div>
+                        @foreach($filtroPorExtensao as $file)
+                        {{ $file->arquivo }} -----  {{ $file->extensao  }}<br />
+                        @endforeach
+                     
+                       
                    </div>
                 </div>
             </div>

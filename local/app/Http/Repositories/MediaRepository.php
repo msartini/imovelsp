@@ -1,6 +1,9 @@
 <?php namespace App\Http\Repositories; 
 use App\Http\Interfaces\MediaRepositoryInterface;
+
+
 use App\Media;
+use App\MediaDTO;
 
 class MediaRepository implements MediaRepositoryInterface {
     
@@ -12,28 +15,34 @@ class MediaRepository implements MediaRepositoryInterface {
 
 
 	public function all(){
-		return Media::all();
+		return $this->media->all();
 	}
 
 	public function findFirst(){
-		return Media::find(1);
+		return $this->media->find(1);
 	}
 
 	public function createOrUpdate( $dto ) {
-		
-
 		if (  $dto->getId() ) {
-			$media = Media::find( $dto->getId() ) ;
+                    $this->media = Media::find( $dto->getId() ) ;
 		} else {
-			$media = new Media();
+                    $this->media = new Media();
 		}
 		
-		$media->arquivo = $dto->getArquivo();
-
-		$media->save();
-
-		return $media;
-
+                
+                $this->media->arquivo = $dto->getArquivo();
+                $this->media->extensao = $dto->getExtensao();
+                
+                
+                $this->media->save();
+		return $this->media;
 	}
+        
+        public function getByExtension( $extension ) {
+            return $this->media->where('extensao', '=', $extension)->get();
+        }
+        
+        
+        
 
 }

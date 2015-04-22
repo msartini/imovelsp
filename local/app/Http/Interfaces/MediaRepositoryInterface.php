@@ -7,5 +7,7 @@ interface MediaRepositoryInterface {
 	public function findFirst();
 
 	public function createOrUpdate( $objeto );
-	
+        
+        public function getByExtension( $extension );
+
 }

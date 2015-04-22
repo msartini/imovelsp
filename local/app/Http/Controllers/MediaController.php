@@ -1,13 +1,12 @@
 <?php namespace App\Http\Controllers;
  
-use App\Media;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
-use App\Http\Repositories\MediaRepository;
-use App\MediaDTO;
  
+use App\Http\Controllers\Controller;
+ 
+use App\Http\Repositories\MediaRepository;
+ 
+use App\Media;
+use App\MediaDTO;
 
 class MediaController extends Controller {
 
@@ -27,19 +26,22 @@ class MediaController extends Controller {
 	{     
           
 
-			$dados = new MediaDTO();
-			$dados->setId(13);
-			$dados->setArquivo("DOCUMENTO DO PPT numero DOIS - ALTERADO");
-			$dados->setExtensao("ppt");
+            $dados = new MediaDTO();
+            $dados->setId(86);
+            $dados->setArquivo("alterou registro 86 ");
+            $dados->setExtensao("xls");
+            
             $this->media->createOrUpdate( $dados );	
+         
+            $filtroPorExtensao = $this->media->getByExtension('xls');
 
             $files = $this->media->all();
             
             $titulo = "Lista arquivos de mídia" ; 
 
             $primeiro = $this->media->findFirst();
-            
-            return view( 'media' , compact( 'titulo' , 'files', 'primeiro' ) );
+           
+            return view( 'media' , compact( 'titulo' , 'files', 'primeiro', 'filtroPorExtensao' ) );
             
 	}
   
