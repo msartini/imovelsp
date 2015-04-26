@@ -12,7 +12,8 @@
                    Arquivos
                    <div>
                         @foreach($files as $file)
-                        {{ $file->arquivo }} <br />
+                        <pre>{{ $file->arquivo }}</pre>
+                        <pre>TIPO: {{ $file->extensao }}</pre> <br />
                         @endforeach
                    </div>
                    <br>

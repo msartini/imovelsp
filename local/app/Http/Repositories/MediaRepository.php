@@ -18,6 +18,12 @@ class MediaRepository implements MediaRepositoryInterface {
 		return $this->media->all();
 	}
 
+
+
+	public function findById( $id ){
+		return $this->media->find( $id );
+	}
+
 	public function findFirst(){
 		return $this->media->find(1);
 	}
@@ -25,16 +31,22 @@ class MediaRepository implements MediaRepositoryInterface {
 	public function createOrUpdate( $dto ) {
 		if (  $dto->getId() ) {
                     $this->media = Media::find( $dto->getId() ) ;
+
+                    if ( ! $this->media) {
+                    	$this->media = new Media() ;
+                    }
+                   
 		} else {
                     $this->media = new Media();
 		}
 		
                 
-                $this->media->arquivo = $dto->getArquivo();
-                $this->media->extensao = $dto->getExtensao();
-                
-                
-                $this->media->save();
+        $this->media->arquivo = $dto->getArquivo();
+
+        $this->media->extensao = $dto->getExtensao();
+        
+        
+        $this->media->save();
 		return $this->media;
 	}
         

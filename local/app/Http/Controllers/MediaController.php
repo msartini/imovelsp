@@ -27,12 +27,14 @@ class MediaController extends Controller {
           
 
             $dados = new MediaDTO();
-            $dados->setId(86);
-            $dados->setArquivo("alterou registro 86 ");
-            $dados->setExtensao("xls");
-            
+            $dados->setId( 7 );
+            $dados->setArquivo("REGISTRO NUMERO 7, ALTERADO O TIPO DE DOCUMENTO ");
+            $dados->setExtensao("docx");
+
+ 
+
             $this->media->createOrUpdate( $dados );	
-         
+
             $filtroPorExtensao = $this->media->getByExtension('xls');
 
             $files = $this->media->all();
