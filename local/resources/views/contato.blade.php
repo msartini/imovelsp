@@ -8,17 +8,25 @@
 
 	       
 	       
-	        {!! Form::hidden('long', null, 
+	        {!! Form::text('long', null, 
 	            array('', 
 					'class'=>'form-control', 
 					'placeholder'=>'Long')
 				) 
           	!!}
 
-      	 	{!! Form::hidden('lat', null, 
+      	 	{!! Form::text('lat', null, 
 	            array('', 
 					'class'=>'form-control', 
 					'placeholder'=>'Lat')
+				) 
+          	!!}
+          	<!-- Logradouro -->
+	        {!! Form::label('Logradouro') !!}
+	        {!! Form::text('logradouro', null, 
+	            array('required', 
+					'class'=>'form-control', 
+					'placeholder'=>'Logradouro')
 				) 
           	!!}
 	        <!-- Endereco -->
