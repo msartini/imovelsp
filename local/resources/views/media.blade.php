@@ -9,28 +9,28 @@
             <div class = "panel panel-default" >
                 <div class="panerl-heading" >Produtos</div>
                 <div class="panel-body" >
-                   Arquivos
-                   <div>
+                    Arquivos
+                    <div>
                         @foreach($files as $file)
                         <pre>{{ $file->arquivo }}</pre>
                         <pre>TIPO: {{ $file->extensao }}</pre> <br />
                         @endforeach
-                   </div>
-                   <br>
-                   <div>
+                    </div>
+                    <br>
+                    <div>
                         <hr />
                         @if (count($primeiro))
                         {{ $primeiro->id }} - {{ $primeiro->extensao }}
                         @endif
-                   </div>
-                   
-                   <div>
+                    </div>
+
+                    <div>
                         @foreach($filtroPorExtensao as $file)
                         {{ $file->arquivo }} -----  {{ $file->extensao  }}<br />
                         @endforeach
-                     
-                       
                    </div>
+                   
+
                 </div>
             </div>
         </div>
