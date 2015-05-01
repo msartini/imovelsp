@@ -91,7 +91,6 @@ class MediaController extends Controller {
 	      return Redirect::to('/contato')->withInput()->withErrors($validator);
 	    }
 	    else {
-	    	//
 
 	    	$url = 'http://maps.google.com/maps/api/geocode/json?address=';
 			$concat = ', ';
@@ -115,6 +114,7 @@ class MediaController extends Controller {
 		  
 	      	//return view('contato')->with('longitude', $long)->with('latitude', $lat);
 	      	return Redirect::to('contato')->withInput();
+	      	
 	    }
 
 
