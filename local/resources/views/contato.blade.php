@@ -1,10 +1,15 @@
 @extends( "app" )
 
 @section( "content" )
+
+
+
+
 <div class = "container" >
     <div class = "row" >
+
 		 <fieldset>
-	      {!! Form::open(array('route' => 'geocode', 'class' => 'form')) !!}
+	      {!! Form::open(array('route' => 'contatogeral', 'class' => 'form', 'name' => 'form2')) !!}
 
 	       
 	       
@@ -76,8 +81,18 @@
 			      array('class'=>'btn btn-primary')) !!}
 			</div>
 
+		 	 
+
 	      {!! Form::close() !!}
 	    </fieldset>
+
+ 
+		<?php $url = action('MediaController@geocode'); ?>
+		<div class="form-group">
+		    {!! Form::button('Pesquisa Endereço', 
+		      array( 'class'=>'btn btn-primary', 'id' => 'btnLocation', 
+		      'onclick' => 'getLocation(this)', 'data-url' => $url ) ) !!}
+		</div>
 
 	    <?php echo $errors->first('cidade'); ?><br>
 	    <?php echo $errors->first('estado'); ?>
@@ -86,5 +101,16 @@
 
 	</div>
 </div>
+
+<script>
+/**
+* Desvia a acao do usuario para recuperar a geoLocation do endereco
+*/ 
+ 
+function getLocation(obj) {
+    document.form2.action = obj.getAttribute('data-url');
+    document.form2.submit();
+};
+</script>
 
 @endsection 

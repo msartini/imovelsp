@@ -39,7 +39,10 @@ Route::get('fornecedor', 'FornecedorController@show') ;
 
 Route::get('arquivos', 'MediaController@index') ;
 
+Route::post('contato', ['as' => 'contatogeral', 'uses' => 'FornecedorController@show']);
+
 Route::post('localizacao', ['as' => 'geocode', 'uses' => 'MediaController@geocode']);
+
 Route::get('contato', ['as' => 'contato', 'uses' => 'MediaController@contato']);
 
 
