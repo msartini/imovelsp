@@ -38,6 +38,7 @@ class MediaController extends Controller {
             $filtroPorExtensao = $this->media->getByExtension('xls');
 
             $files = $this->media->all();
+ 
             
             $titulo = "Lista arquivos de mídia" ; 
 

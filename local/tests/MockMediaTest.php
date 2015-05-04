@@ -19,7 +19,6 @@ class MockMediaTest extends TestCase {
         $repository->shouldReceive('all')->once()->andReturn(array('foo'));
         App::instance('UserRepositoryInterface', $repository);
         
-        
         $response = $this->action('GET', 'MediaController@index');
         
         $this->assertResponseOk();
