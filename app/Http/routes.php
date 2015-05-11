@@ -42,7 +42,7 @@ Route::get('perfil-2', 'ProfileController@perfil');
 Route::get('logoutservice', function () {
     if (Auth::check()) {
         Auth::logout();
-        //Session::flush();
+        //Session::flush();  
     }
     return '[{"disconected": "ok"}]';
 });
