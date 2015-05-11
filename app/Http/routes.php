@@ -30,43 +30,40 @@ Route::get('usuario', 'UsuarioController@index') ;
 
 Route::get('fornecedor/cadastro', 'FornecedorController@index') ;
 
-/* Usuário enviou os dados para serem salvos no banco */
 Route::post('fornecedor', 'FornecedorController@store') ;
 
 Route::get('fornecedor', 'FornecedorController@show') ;
 
-
-
 Route::get('arquivos', 'MediaController@index') ;
-
-Route::post('contato', ['as' => 'contatogeral', 'uses' => 'FornecedorController@show']);
-
-Route::post('localizacao', ['as' => 'geocode', 'uses' => 'MediaController@geocode']);
-
-Route::get('contato', ['as' => 'contato', 'uses' => 'MediaController@contato']);
-
-
-
-
-//Rota para Media Controller
-//Route::resource('media', 'MediaController', ['only' => ['index', 'show']]);
-
-
-
-
-
-
-
-
 
 Route::get('perfil-2', 'ProfileController@perfil');
 
-// Route::get('perfil-2', function(){
-//     return View::make('profileclone')->render();
-// });
-  
+
+Route::get('logoutservice', function () {
+    if (Auth::check()) {
+        Auth::logout();
+        //Session::flush();
+    }
+    return '[{"disconected": "ok"}]';
+});
+
+
+Route::get('admin', 'FornecedorController@index');
+
+//Route::get('admin', ['middleware' => 'auth.basic', 'uses' => 'FornecedorController@index']);
+
+// Route::get('admin', array('middleware' => 'auth.basic', function () {
+//     if (Auth::check()) {
+//         //return "Hello Admin!";
+//     } else {
+//         //return view('auth/login');
+//     }
+// }));
+
+//Route::get('admin', ['middleware' => 'auth.basic', 'as' => 'paineladmin', 'uses' => 'FornecedorController@index', function () {
+//}]);
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
 ]);

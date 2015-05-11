@@ -19,26 +19,37 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">Endereço</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<input type="text" class="form-control" name="address" value="{{ old('address') }}">
 							</div>
 						</div>
-
 						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
+							<label class="col-md-4 control-label">Bairro</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+								<input type="email" class="form-control" name="neighborhood" value="{{ old('nighborhood') }}">
 							</div>
 						</div>
-
 						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
+							<label class="col-md-4 control-label">Cidade</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
+								<input type="text" class="form-control" name="city" value="{{ old('city') }}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">Estado</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="state" value="{{ old('state') }}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-4 control-label">CEP</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="postacode" value="{{ old('postalcode') }}">
 							</div>
 						</div>
 
+						
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
