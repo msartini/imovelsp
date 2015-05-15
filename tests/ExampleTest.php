@@ -1,6 +1,5 @@
 <?php
 
-use App;
 
 class ExampleTest extends TestCase {
 
