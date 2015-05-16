@@ -1,0 +1,40 @@
+<?php $__env->startSection( "content" ); ?>
+
+<div class = "container" >
+    <div class = "row" >
+        <h1><?php echo e($titulo); ?></h1>
+        <div class = "col-md-10 col-md-offset-1" >
+            <div class = "panel panel-default" >
+                <div class="panerl-heading" >Produtos</div>
+                <div class="panel-body" >
+                    Arquivos
+                    <div>
+                        <?php foreach($files as $file): ?>
+                        <pre><?php echo e($file->arquivo); ?></pre>
+                        <pre>TIPO: <?php echo e($file->extensao); ?></pre> <br />
+                        <?php endforeach; ?>
+                    </div>
+                    <br>
+                    <div>
+                        <hr />
+                        <?php if(count($primeiro)): ?>
+                        <?php echo e($primeiro->id); ?> - <?php echo e($primeiro->extensao); ?>
+
+                        <?php endif; ?>
+                    </div>
+
+                    <div>
+                        <?php foreach($filtroPorExtensao as $file): ?>
+                        <?php echo e($file->arquivo); ?> -----  <?php echo e($file->extensao); ?><br />
+                        <?php endforeach; ?>
+                   </div>
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make( "app" , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
