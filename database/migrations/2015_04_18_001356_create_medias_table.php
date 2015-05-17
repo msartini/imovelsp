@@ -28,7 +28,7 @@ class CreateMediasTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		 Schema::drop('medias');
 	}
 
 }

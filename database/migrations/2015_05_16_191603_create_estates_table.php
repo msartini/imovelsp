@@ -20,6 +20,8 @@ class CreateEstatesTable extends Migration {
                     $t->string('area')->nullable();
                     $t->string('bathroom')->nullable();
                     $t->string('room')->nullable();
+                    $t->string('cars')->nullable();
+                        
                    
 		});
 	}
