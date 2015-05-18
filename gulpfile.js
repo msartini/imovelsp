@@ -1,3 +1,5 @@
+var gulp = require("gulp");
+var shell = require("gulp-shell");
 var elixir = require('laravel-elixir');
 
 /*
@@ -14,3 +16,22 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.less('app.less');
 });
+
+elixir(function(mix) {
+    mix.sass("main.scss");
+});
+
+
+elixir(function(mix) {
+    mix.task('speak');
+});
+
+
+
+
+gulp.task("speak", function() {
+    var message = 'Gerou arquivos com sucesso!!!';
+
+    gulp.src('').pipe(shell('echo ' + message));
+});
+    

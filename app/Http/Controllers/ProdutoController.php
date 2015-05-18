@@ -1,35 +1,50 @@
-<?php
-namespace App\Http\Controllers;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<?php namespace App\Http\Controllers;
 /**
  * Description of ProdutoController
  *
  * @author marciosartini
  */
 
+
 use App\Http\Repositories\DbUserRepository;
 
+/**
+ *  Description of ProdutoController
+ *
+ *  @method   transacoes de produtos
+ *  @category Controllers
+ *  @package  Controller
+ *  @author   Marcio Sartini <msartini@gmail.com>
+ *  @license  Sartini http://sartini.com.br
+ *  @link     Produtos
+ */
 class ProdutoController extends Controller
 {
 
     protected $users;
-
+    
+    /**
+    * Constructor recebe injecao de dependencia
+    *
+    * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
+    *
+    * @return void
+    */
     public function __construct(DbUserRepository $dbUserRepository)
     {
         $this->users = $dbUserRepository;
-        $this->middleware("guest");
+        //$this->middleware("guest");
     }
     
+     /**
+    * Constructor recebe injecao de dependencia
+    *
+    * @return void
+    */
     public function index()
     {
-        var_dump($this->users->all());
-        var_dump($this->users->findFirst());
-        return "teste";
+        //var_dump($this->users->all());
+        //var_dump($this->users->findFirst());
+        return $this->users->findFirst();
     }
 }

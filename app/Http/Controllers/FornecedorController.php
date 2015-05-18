@@ -7,6 +7,17 @@
  */
 use Illuminate\Http\Request;
 
+
+/**
+ *  Description of FornecedorController
+ *
+ *  @method   transacoes de fornecedores
+ *  @category Controllers
+ *  @package  Controller
+ *  @author   Marcio Sartini <msartini@gmail.com>
+ *  @license  Sartini http://sartini.com.br
+ *  @link     Fornecedores
+ */
 class FornecedorController extends Controller
 {
 
