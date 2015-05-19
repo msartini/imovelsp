@@ -1,0 +1,124 @@
+<?php $__env->startSection( "content" ); ?>
+
+
+
+
+<div class = "container" >
+    <div class = "row" >
+
+		 <fieldset>
+	      <?php echo Form::open(array('route' => 'contatogeral', 'class' => 'form', 'name' => 'form2')); ?>
+
+
+	       
+	       
+	        <?php echo Form::text('long', null, 
+	            array('', 
+					'class'=>'form-control', 
+					'placeholder'=>'Long')
+				); ?>
+
+
+      	 	<?php echo Form::text('lat', null, 
+	            array('', 
+					'class'=>'form-control', 
+					'placeholder'=>'Lat')
+				); ?>
+
+          	<!-- Logradouro -->
+	        <?php echo Form::label('Logradouro'); ?>
+
+	        <?php echo Form::text('logradouro', null, 
+	            array('required', 
+					'class'=>'form-control', 
+					'placeholder'=>'Logradouro')
+				); ?>
+
+	        <!-- Endereco -->
+	        <?php echo Form::label('Endereço'); ?>
+
+	        <?php echo Form::text('endereco', null, 
+	            array('required', 
+					'class'=>'form-control', 
+					'placeholder'=>'Endereco')
+				); ?>
+
+			<!-- Numero -->
+			<?php echo Form::label('Número'); ?>
+
+			<?php echo Form::text('numero', null, 
+			    array('required', 
+					'class'=>'form-control', 
+					'placeholder'=>'Número')
+				); ?>
+
+			<!-- Bairro -->
+			<?php echo Form::label('Bairro'); ?>
+
+					<?php echo Form::text('bairro', null, 
+				    	array('required', 
+						'class'=>'form-control', 
+						'placeholder'=>'Bairro')
+					); ?>
+
+			<!-- Cidade -->
+			<?php echo Form::label('Cidade'); ?>
+
+				<?php echo Form::text('cidade', null, 
+				    array('', 
+						'class'=>'form-control', 
+						'placeholder'=>'Cidade')
+				); ?>
+
+			<!-- Estado -->
+			<?php echo Form::label('Estado'); ?>
+
+				<?php echo Form::text('estado', null, 
+				    array('', 
+						'class'=>'form-control', 
+						'placeholder'=>'Estado')
+				); ?>
+
+			<div>LONGITUDE: <?php echo e($longitude); ?></div>
+
+			<div class="form-group">
+			    <?php echo Form::submit('Pesquisa Endereço', 
+			      array('class'=>'btn btn-primary')); ?>
+
+			</div>
+
+		 	 
+
+	      <?php echo Form::close(); ?>
+
+	    </fieldset>
+
+ 
+		<?php $url = action('MediaController@geocode'); ?>
+		<div class="form-group">
+		    <?php echo Form::button('Pesquisa Endereço', 
+		      array( 'class'=>'btn btn-primary', 'id' => 'btnLocation', 
+		      'onclick' => 'getLocation(this)', 'data-url' => $url ) ); ?>
+
+		</div>
+
+	    <?php echo $errors->first('cidade'); ?><br>
+	    <?php echo $errors->first('estado'); ?>
+
+
+
+	</div>
+</div>
+
+<script>
+/**
+* Desvia a acao do usuario para recuperar a geoLocation do endereco
+*/ 
+function getLocation(obj) {
+    document.form2.action = obj.getAttribute('data-url');
+    document.form2.submit();
+};
+</script>
+
+<?php $__env->stopSection(); ?> 
+<?php echo $__env->make( "app" , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
