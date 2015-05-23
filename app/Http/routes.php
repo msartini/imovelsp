@@ -38,11 +38,27 @@ Route::get('arquivos', 'MediaController@index') ;
 
 Route::get('perfil-2', 'ProfileController@perfil');
 
+//Route::get('post', 'PostController@index');
+
+
+Route::group(array('prefix' => 'post'), function () {
+
+    Route::get('/', 'PostController@index');
+    
+    // First Route
+    Route::get('/criar', function () {
+        return 'Craindo seu primeiro post';
+    });
+
+     
+
+});
+
 
 Route::get('logoutservice', function () {
     if (Auth::check()) {
         Auth::logout();
-        //Session::flush();  
+    //Session::flush();
     }
     return '[{"disconected": "ok"}]';
 });

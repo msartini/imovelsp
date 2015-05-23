@@ -1,16 +1,20 @@
 <?php namespace App\Http\Controllers;
 
 /**
- * Description of ProdutoController
+ * Description of Postcontroller
  *
  * @author marciosartini
  */
 
+use App\Post;
+use App\Comment;
 
-use App\Http\Repositories\DbUserRepository;
+use App\Http\Repositories\PostRepository;
+
+use Carbon\Carbon;
 
 /**
- *  Description of ProdutoController
+ *  Description of PostController
  *
  *  @method   transacoes de produtos
  *  @category Controllers
@@ -19,10 +23,10 @@ use App\Http\Repositories\DbUserRepository;
  *  @license  Sartini http://sartini.com.br
  *  @link     Produtos
  */
-class ProdutoController extends Controller
+class PostController extends Controller
 {
 
-    protected $users;
+    protected $posts;
     
     /**
     * Constructor recebe injecao de dependencia
@@ -31,10 +35,9 @@ class ProdutoController extends Controller
     *
     * @return void
     */
-    public function __construct(DbUserRepository $dbUserRepository)
+    public function __construct(PostRepository $postRepository)
     {
-        $this->users = $dbUserRepository;
-        //$this->middleware("guest");
+        $this->posts = $postRepository;
     }
     
      /**
@@ -44,8 +47,15 @@ class ProdutoController extends Controller
     */
     public function index()
     {
-        //var_dump($this->users->all());
-        //var_dump($this->users->findFirst());
-        return $this->users->findFirst();
+ 
+        $post = array (
+            'post_id' => 1,
+            'comment_id' => 13,
+            'comment' => 'Alterado o comentario 13 do post 1 - as: ' . Carbon::now()
+        );
+
+
+        return $this->posts->updateCommentByPost($post);
+
     }
 }

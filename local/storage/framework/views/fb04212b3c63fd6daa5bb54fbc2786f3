@@ -1,9 +1,0 @@
-<p>Some content here</p>
-
-<?php echo $__env->yieldContent('content'); ?>
-
-<p>Some additional content here</p>
-
-<?php echo $__env->yieldContent('footer'); ?>
-
-<div>Olá Footer</div>
