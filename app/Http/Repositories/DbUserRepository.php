@@ -8,11 +8,11 @@ class DbUserRepository implements UserRepositoryInterface
     
     public function all()
     {
-        return User::all()->toArray();
+        return User::all();
     }
 
     public function findFirst()
     {
-        return User::find(1)->toArray();
+        return User::find(1);
     }
 }

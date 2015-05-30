@@ -25,7 +25,7 @@ class ProdutoController extends Controller
     protected $users;
     
     /**
-    * Constructor recebe injecao de dependencia
+    * Constructor recebe injecao de dependence
     *
     * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
     *
@@ -44,8 +44,6 @@ class ProdutoController extends Controller
     */
     public function index()
     {
-        //var_dump($this->users->all());
-        //var_dump($this->users->findFirst());
         return $this->users->findFirst();
     }
 }
