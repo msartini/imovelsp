@@ -35,7 +35,7 @@ class RedirectIfAuthenticated
     {
         if ($this->auth->check()) {
             //Desabiliei, pois esta desviando qq pagina guest para /home, depois de logado
-            return new RedirectResponse(url('/home'));
+            //return new RedirectResponse(url('/home'));
         }
 
         return $next($request);

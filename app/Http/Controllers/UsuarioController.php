@@ -2,6 +2,7 @@
 
 use Mail;
 use \App\Http\Models\Frontibrary;
+use Illuminate\Support\Facades\Auth;
 
 
 class UsuarioController extends Controller {
@@ -36,12 +37,20 @@ class UsuarioController extends Controller {
     {
 
 
+        if (Auth::check()) {
+            // The user is logged in...
+
+            $email = Auth::user()->email;
+            $id = Auth::id();
+
+            echo $email;
+            echo '<br>';
+            echo $id;
+        }
+        return 'ok';
+
         $frontparam = new Frontibrary("jquery", "bootstrap");
 
-
-        Mail::send('user', ['titulo' => 'Envio de email', 'css' => $frontparam], function ($message) {
-            $message->to('msartini@gmail.com', 'Marcio Sartini')->subject('Welcome!');
-        });
 
         return view('user', ['titulo' => 'Envio de email', 'css' => $frontparam]);
     }
