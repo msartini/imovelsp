@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string arquivo
+ */
 class Media extends Model  {
 
     protected $table = 'medias';

@@ -14,38 +14,40 @@ class ProfileController extends Controller {
 	|
 	*/
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('guest');
-	}
+    /**
+     * Create a new controller instance.
+     *
+     * @return \App\Http\Controllers\ProfileController
+     */
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
 
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-			print "teste" ;
-			exit() ;
+    /**
+     * Show the application welcome screen to the user.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+            print "teste" ;
+            exit() ;
 
             $frontparam = new \App\Http\Models\Frontibrary("jquery", "bootstrap");
             return view('user')->with('css', $frontparam);
-            
-	}
-        
-    public function perfil(){
+
+    }
+
+    public function perfil()
+    {
         return view('profileclone');
     }
-    
-    public function soma($a,$b)  {
+
+    public function soma($a,$b)
+    {
         return $a + $b;
-    } 
+    }
                 
 
 }

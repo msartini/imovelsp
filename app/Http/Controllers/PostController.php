@@ -9,7 +9,7 @@
 use App\Post;
 use App\Comment;
 
-use App\Http\Repositories\PostRepository;
+use App\Repositories\PostRepository;
 
 use Carbon\Carbon;
 
@@ -27,14 +27,15 @@ class PostController extends Controller
 {
 
     protected $posts;
-    
+
     /**
-    * Constructor recebe injecao de dependencia
-    *
-    * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
-    *
-    * @return void
-    */
+     * Constructor recebe injecao de dependencia
+     *
+     * @param PostRepository $postRepository
+     * @internal param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
+     *
+     * @return \App\Http\Controllers\PostController
+     */
     public function __construct(PostRepository $postRepository)
     {
         $this->posts = $postRepository;
@@ -47,15 +48,17 @@ class PostController extends Controller
     */
     public function index()
     {
- 
+
+
         $post = array (
             'post_id' => 1,
-            'comment_id' => 13,
-            'comment' => 'Alterado o comentario 13 do post 1 - as: ' . Carbon::now()
+            'comment_id' => 7,
+            'comment' => 'Alterado o comentario 7 do post 1 - as: ' . Carbon::now()
         );
+        $posts = $this->posts->updateCommentByPost($post);
 
+        $titulo = "Lista de imagens";
 
-        return $this->posts->updateCommentByPost($post);
-
+        return view('posts.post', compact('titulo', 'posts'));
     }
 }

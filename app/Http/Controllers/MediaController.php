@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
- 
+
+
 use App\Media;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -43,7 +44,6 @@ class MediaController extends Controller
 
 
 
-        
         //print_r( $arquivos->get_element_by_rg() ) ;
         
         //return view( 'media' )->with( 'files' , $files );

@@ -23,14 +23,14 @@ class ProdutoController extends Controller
 {
 
     protected $users;
-    
+
     /**
-    * Constructor recebe injecao de dependence
-    *
-    * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
-    *
-    * @return void
-    */
+     * Constructor recebe injecao de dependence
+     *
+     * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
+     *
+     * @return \App\Http\Controllers\ProdutoController
+     */
     public function __construct(DbUserRepository $dbUserRepository)
     {
         $this->users = $dbUserRepository;

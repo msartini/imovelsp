@@ -38,6 +38,7 @@ class UploadImageController extends Controller
     public function store()
     {
         dd(Input::file('image'));
+        $files = Input::file('image');
     }
 
     /**
