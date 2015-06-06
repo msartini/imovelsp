@@ -5,6 +5,8 @@
  *
  * @author marciosartini
  */
+
+USE Input;
 use Illuminate\Http\Request;
 
 
@@ -41,6 +43,7 @@ class FornecedorController extends Controller
     
     public function store(Request $request)
     {
+        dd($request->input());
         $name = strip_tags($request->input('name'));
         return $name;
     }

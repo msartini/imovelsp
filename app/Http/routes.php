@@ -14,7 +14,9 @@
 
  
 
-Route::get('/', 'WelcomeController@index') ;
+Route::get('/', 'WelcomeController@index');
+
+Route::get('/home', 'HomeController@index');
 
 Route::get('/posts', 'PostController@index');
 
@@ -34,6 +36,18 @@ Route::group(array('prefix' => 'imagens'), function () {
 Route::group(array('prefix' => 'fornecedor'), function () {
     Route::get('/cadastro', [ 'as' => 'fornecedor.cadastro', 'uses' => 'FornecedorController@index']);
     Route::get('/', [ 'as' => 'fornecedor.show', 'uses' => 'FornecedorController@show']);
+    Route::post('/', [ 'as' => 'fornecedor.store', 'uses' => 'FornecedorController@store']);
+});
+
+
+/*
+ * @route admin para imoveis
+ */
+Route::group(array('prefix' => 'admin'), function () {
+    Route::group(array('prefix' => 'imoveis'), function () {
+        Route::get('/criar', [ 'as' => 'state.criar', 'uses' => 'StateController@create']);
+        Route::post('/salvar', [ 'as' => 'state.save', 'uses' => 'StateController@store']);
+    });
 });
 
 

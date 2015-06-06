@@ -36,7 +36,6 @@ class ProfileController extends Controller {
 
             $frontparam = new \App\Http\Models\Frontibrary("jquery", "bootstrap");
             return view('user')->with('css', $frontparam);
-
     }
 
     public function perfil()
@@ -44,7 +43,12 @@ class ProfileController extends Controller {
         return view('profileclone');
     }
 
-    public function soma($a,$b)
+    /**
+     * @param $a
+     * @param $b
+     * @return mixed
+     */
+    public function soma($a, $b)
     {
         return $a + $b;
     }

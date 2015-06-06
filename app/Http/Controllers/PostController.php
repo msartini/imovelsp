@@ -48,8 +48,6 @@ class PostController extends Controller
     */
     public function index()
     {
-
-
         $post = array (
             'post_id' => 1,
             'comment_id' => 7,
