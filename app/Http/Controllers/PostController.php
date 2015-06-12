@@ -27,14 +27,14 @@ class PostController extends Controller
 {
 
     protected $posts;
-
+    
     /**
-     * Constructor recebe injecao de dependencia
-     *
-     * @param PostRepository $postRepository
-     * @internal param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
-     *
-     */
+    * Constructor recebe injecao de dependencia
+    *
+    * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
+    *
+    * @return void
+    */
     public function __construct(PostRepository $postRepository)
     {
         $this->posts = $postRepository;

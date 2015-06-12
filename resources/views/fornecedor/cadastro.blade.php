@@ -8,7 +8,7 @@
 				<div class="panel-heading">Fornecedor / Cadastro</div>
 
 				<div class="panel-body">
-                                   <form class="form-horizontal" role="form" method="POST" action="{{ url('/fornecedor') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/fornecedor') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">

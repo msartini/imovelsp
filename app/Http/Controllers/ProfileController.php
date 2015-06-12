@@ -20,7 +20,7 @@ class ProfileController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return \App\Http\Controllers\ProfileController
      */
     public function __construct()
     {

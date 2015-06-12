@@ -14,70 +14,47 @@
 
  
 
-Route::get('/', 'WelcomeController@index') ;
+Route::get('/', 'WelcomeController@index');
 
-Route::get('profile', 'ProfileController@index') ;
+Route::get('/home', 'HomeController@index');
 
-Route::get('perfil', 'ProfileController@perfil') ;
+Route::get('/posts', 'PostController@index');
 
-Route::get('home', 'HomeController@index') ;
-
-Route::get('produtos', 'ProdutoController@index') ;
-
-Route::get('listagemImoveis', 'HomeController@listagemImoveis') ;
-
-Route::get('usuario', 'UsuarioController@index') ;
-
-Route::get('fornecedor/cadastro', 'FornecedorController@index') ;
-
-Route::post('fornecedor', 'FornecedorController@store') ;
-
-Route::get('fornecedor', 'FornecedorController@show') ;
-
-Route::get('arquivos', 'MediaController@index') ;
-
-Route::get('perfil-2', 'ProfileController@perfil');
-
-//Route::get('post', 'PostController@index');
+Route::get('/usuarios', 'UsuarioController@index');
 
 
-Route::group(array('prefix' => 'post'), function () {
+Route::get('/arquivos', 'MediaController@index');
 
-    Route::get('/', 'PostController@index');
+Route::group(array('prefix' => 'imagens'), function () {
     
-    // First Route
-    Route::get('/criar', function () {
-        return 'Craindo seu primeiro post';
+    Route::get('/criar', [ 'as' => 'images.criar', 'uses' => 'UploadImageController@create']);
+    Route::post('/criar', [ 'as' => 'images.store', 'uses' => 'UploadImageController@store']);
+
+});
+
+
+Route::group(array('prefix' => 'fornecedor'), function () {
+    Route::get('/cadastro', [ 'as' => 'fornecedor.cadastro', 'uses' => 'FornecedorController@index']);
+    Route::get('/', [ 'as' => 'fornecedor.show', 'uses' => 'FornecedorController@show']);
+    Route::post('/', [ 'as' => 'fornecedor.store', 'uses' => 'FornecedorController@store']);
+});
+
+
+/*
+ * @route admin para imoveis
+ */
+Route::group(array('prefix' => 'admin'), function () {
+    Route::group(array('prefix' => 'imoveis'), function () {
+        Route::get('/criar', [ 'as' => 'state.criar', 'uses' => 'StateController@create']);
+        Route::post('/salvar', [ 'as' => 'state.save', 'uses' => 'StateController@store']);
     });
-
-     
-
 });
 
 
-Route::get('logoutservice', function () {
-    if (Auth::check()) {
-        Auth::logout();
-    //Session::flush();
-    }
-    return '[{"disconected": "ok"}]';
+Route::group(array('prefix' => 'file'), function () {
+    Route:get('/', [ 'as' => 'files.list', 'uses' => 'FileController@index']);
 });
 
-
-Route::get('admin', 'FornecedorController@index');
-
-//Route::get('admin', ['middleware' => 'auth.basic', 'uses' => 'FornecedorController@index']);
-
-// Route::get('admin', array('middleware' => 'auth.basic', function () {
-//     if (Auth::check()) {
-//         //return "Hello Admin!";
-//     } else {
-//         //return view('auth/login');
-//     }
-// }));
-
-//Route::get('admin', ['middleware' => 'auth.basic', 'as' => 'paineladmin', 'uses' => 'FornecedorController@index', function () {
-//}]);
 
 Route::controllers([
     'auth' => 'Auth\AuthController',

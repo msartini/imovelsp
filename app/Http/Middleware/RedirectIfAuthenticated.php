@@ -16,14 +16,13 @@ class RedirectIfAuthenticated
     /**
      * Create a new filter instance.
      *
-     * @param  Guard  $auth
-     * @return void
+     * @param  Guard $auth
+     * @return \App\Http\Middleware\RedirectIfAuthenticated
      */
     public function __construct(Guard $auth)
     {
         $this->auth = $auth;
     }
-
     /**
      * Handle an incoming request.
      *
@@ -35,9 +34,8 @@ class RedirectIfAuthenticated
     {
         if ($this->auth->check()) {
             //Desabiliei, pois esta desviando qq pagina guest para /home, depois de logado
-            return new RedirectResponse(url('/home'));
+            //return new RedirectResponse(url('/home'));
         }
-
         return $next($request);
     }
 }

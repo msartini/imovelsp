@@ -33,6 +33,11 @@ use Illuminate\Redis\RedisServiceProvider;
  */
 class MediaController extends Controller
 {
+    public function __constructor()
+    {
+        
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -61,21 +66,27 @@ class MediaController extends Controller
 
         $titulo = "Lista arquivos de mídia - message";
 
+        
+
+
+        
         //print_r( $arquivos->get_element_by_rg() ) ;
-
+        
         //return view( 'media' )->with( 'files' , $files );
-
+        
         return view('media', compact('titulo', 'files'));
-
+            
     }
+  
 
     /**
      * Display the specified resource.
-     * @param int $idObj id do item
+     *
+     * @param  int  $id
      * @return Response
      */
-    public function show($idObj)
+    public function show($id)
     {
-        return "show method" . $idObj;
+        return "show method" . $id;
     }
 }

@@ -14,15 +14,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHP">
-        <CLASSES>
-          <root url="file:///usr/share/php" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file:///usr/share/php" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>
+
