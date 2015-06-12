@@ -27,14 +27,14 @@ class PostController extends Controller
 {
 
     protected $posts;
-    
+
     /**
-    * Constructor recebe injecao de dependencia
-    *
-    * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
-    *
-    * @return void
-    */
+     * Constructor recebe injecao de dependencia
+     *
+     * @param PostRepository $postRepository
+     * @internal param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
+     *
+     */
     public function __construct(PostRepository $postRepository)
     {
         $this->posts = $postRepository;
@@ -50,8 +50,8 @@ class PostController extends Controller
  
         $post = array (
             'post_id' => 1,
-            'comment_id' => 13,
-            'comment' => 'Alterado o comentario 13 do post 1 - as: ' . Carbon::now()
+            'comment_id' => 8,
+            'comment' => 'Alterado o comentario 8 do post 1 - as: ' . Carbon::now()
         );
 
 
