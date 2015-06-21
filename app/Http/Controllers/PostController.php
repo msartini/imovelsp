@@ -45,7 +45,7 @@ class PostController extends Controller
     *
     * @return void
     */
-    public function index()
+    public function index() 
     {
  
         $post = array (

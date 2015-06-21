@@ -6,7 +6,8 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+{
 
     use Authenticatable, CanResetPassword;
 
@@ -31,4 +32,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
+
+
+
+    const NOMEDACLASS = "NOME DA CLASSE";
+
+    const FRUITS_LIST = [
+        "Watermelon" => "fruta-water-melon",
+        "Strawberries" => "fruta-berries",
+        "Pomegranate" => "fruta-Pomegranate",
+        "Blackberry" => "fruta-Blackberry",
+    ];
 }

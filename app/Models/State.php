@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace App\Models;
 
 use Eloquent;
 use App\Models\Category;
@@ -17,7 +17,7 @@ use App\Models\Category;
  */
 class State extends Eloquent
 {
-    protected $table = 'states';
+    protected $table = 'estates';
 
     public function category()
     {

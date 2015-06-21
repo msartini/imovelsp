@@ -6,7 +6,6 @@ use view;
 
 class ProfileController extends Controller
 {
-
     /*
     |--------------------------------------------------------------------------
     | Welcome Controller
@@ -45,6 +44,7 @@ class ProfileController extends Controller
 
     public function soma($aValor, $bValor)
     {
+        $teste = 'olasd';
         return $aValor + $bValor;
     } 
                 

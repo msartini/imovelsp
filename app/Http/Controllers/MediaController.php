@@ -1,8 +1,7 @@
-<?php 
+<?php
 /**
  * Trata todos os tipos de medias que passam por imoveis
  * PHP version 5.5
- * 
  * @category App
  * @package  App
  * @author   Marcio Sartini <marcio.sartini@grupofolha.com.br>
@@ -13,17 +12,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Media;
-use App\Http\Requests;
+use App\Repositories\DbUserRepository;
+use App\Repositories\MediaRepository;
+use App\Models\Media;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
-use Illuminate\Redis\RedisServiceProvider;
 
 /**
  * Trata todos os tipos de medias que passam por imoveis
  * PHP version 5.5
- * 
  * @category App
  * @package  App
  * @author   Marcio Sartini <marcio.sartini@grupofolha.com.br>
@@ -33,9 +29,14 @@ use Illuminate\Redis\RedisServiceProvider;
  */
 class MediaController extends Controller
 {
-    public function __constructor()
+
+    protected $media = "media";
+    protected $repo;
+
+    public function __construct(DbUserRepository $repo, MediaRepository $media)
     {
-        
+        $this->repo = $repo;
+        $this->media = $media;
     }
 
     /**
@@ -45,11 +46,8 @@ class MediaController extends Controller
     */
     public function index()
     {
-        //$arquivo = new Media();
-        //$arquivo->nome = "Arquivo do word";
-        //$arquivo.save();
         $arquivos = new Media();
-        $arquivos->arquivo = "documento";
+        $arquivos->arquivo = "ue";
         $arquivos->save();
 
         $files = $arquivos->all();
@@ -66,27 +64,20 @@ class MediaController extends Controller
 
         $titulo = "Lista arquivos de mídia - message";
 
-        
-
-
-        
-        //print_r( $arquivos->get_element_by_rg() ) ;
-        
-        //return view( 'media' )->with( 'files' , $files );
-        
         return view('media', compact('titulo', 'files'));
-            
+
     }
-  
+
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show($mediaId)
     {
-        return "show method" . $id;
+        $media = $this->media;
+        return $media->getById($mediaId);
     }
 }
