@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use Input;
 use Config;
+use Image;
 use Request;
 use App\Models\Category;
 use App\Models\State;
@@ -60,11 +61,10 @@ class StateController extends Controller
             return "Arquivo Inválido";
         }
 
+        $newFileName = date('Ymd');
 
-        Input::file('file')->move(Config::get('media.pathSaveFile'), $file->getClientOriginalName());
-
-
-
+        Request::file('file')->move(Config::get('media.pathSaveFile'), $newFileName . '.' . $extension);
+        Image::make(Config::get('media.pathSaveFile').'/'.$newFileName . '.' .  $extension)->resize(300, 200)->save(Config::get('media.pathSaveFile').'/'. $newFileName. '-300x200.' . $extension);
 
         dd(Input::all());
     }
