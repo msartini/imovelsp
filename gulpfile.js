@@ -26,6 +26,10 @@ elixir(function(mix) {
     mix.task('speak');
 });
 
+elixir(function(mix) {
+    mix.scripts(['jquery.js', 'progressbar.js'], 'public/js/main.js');
+});
+
 
 
 
@@ -34,4 +38,4 @@ gulp.task("speak", function() {
 
     gulp.src('').pipe(shell('echo ' + message));
 });
-    
+

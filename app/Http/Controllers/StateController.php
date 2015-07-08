@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jonyfernandoschulz
- * Date: 6/6/15
- * Time: 17:31
- */
 
 namespace App\Http\Controllers;
 
@@ -12,8 +6,8 @@ use Input;
 use Config;
 use Image;
 use Request;
-use App\Models\Category;
 use App\Models\State;
+use App\Models\EstateImages;
 
 class StateController extends Controller
 {
@@ -61,7 +55,23 @@ class StateController extends Controller
             return "Arquivo Inválido";
         }
 
-        $newFileName = date('Ymd');
+
+        $newFileName = date('Ymd-his');
+
+        $estateImage = new EstateImages();
+        $estateImage->file_original_name = $file->getClientOriginalName();
+        $estateImage->filename = $file->getClientOriginalName();
+        $estateImage->extension = $extension;
+        $estateImage->fullpath = Config::get('media.pathSaveFile') . '/' .  $newFileName . '.' . $extension;
+        $estateImage->save();
+
+        $estateImage->find($estateImage);
+
+
+        $newFileName = $newFileName . '_' .  $estateImage->id;
+        $estateImage->filename = $newFileName;
+        $estateImage->save();
+
 
         Request::file('file')->move(Config::get('media.pathSaveFile'), $newFileName . '.' . $extension);
 
