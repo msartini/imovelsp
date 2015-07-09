@@ -63,7 +63,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="file">Filename:</label>
                             <div class="col-md-6">
-                                <input type="file" name="file" id="file"><br>
+                                <input type="file" multiple name="file[]" id="file"><br>
                             </div>
                         </div>
 

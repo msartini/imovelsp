@@ -30,16 +30,9 @@ elixir.extend('uglify', function() {
 
 });
 
-
-
-elixir(function(mix) {
-    mix.less('app.less');
-});
-
 elixir(function(mix) {
     mix.sass("main.scss");
 });
-
 
 elixir(function(mix) {
     mix.task('speak');
@@ -49,9 +42,6 @@ elixir(function(mix) {
     mix.scripts(['jquery.js', 'progressbar.js'], 'public/js/main.js')
     .uglify();
 });
-
-
-
 
 gulp.task("speak", function() {
     var message = 'Gerou arquivos com sucesso!!!';

@@ -47,7 +47,7 @@ return [
         "string"  => "The :attribute may not be greater than :max characters.",
         "array"   => "The :attribute may not have more than :max items.",
     ],
-    "mimes"                => "The :attribute must be a file of type: :values.",
+    "mimes"                => "O :attribute deve ser do tipo: :values.",
     "min"                  => [
         "numeric" => "The :attribute must be at least :min.",
         "file"    => "The :attribute must be at least :min kilobytes.",
@@ -91,6 +91,9 @@ return [
         ],
         'file' => [
             'required' => 'O campo Arquivo é obrigatório',
+        ],
+        'file' => [
+            'mimes' => 'O tipo do Arquivo de ser: :values.',
         ],
     ],
 
