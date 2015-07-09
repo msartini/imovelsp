@@ -57,7 +57,14 @@ class StateController extends Controller
             echo '</ul>';
             dd('Campos obrigatórios');
         }
+        $estateImage = true;
+        if (!$request->file('file') == null) {
+            $estateImage = $this->media->newImage($request->file('file'));
+        }
 
-        $estateImage = $this->media->newImage($request->file('file'));
+        if (!$estateImage) {
+            die('Erro criando imagens');
+        }
+        echo "Imóvel salvo com sucesso";
     }
 }

@@ -15,6 +15,7 @@ $(function(){
             //$(".progress").hide(); //hide progress bar on success of upload
         },
         complete:function(response){
+            console.log(response);
             if(response.responseText=='0')
                 $(".image").html("Error"); //display error if response is 0
             else
