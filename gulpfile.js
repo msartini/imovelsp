@@ -1,6 +1,9 @@
 var gulp = require("gulp");
+var ext = require('gulp-ext-replace');
 var shell = require("gulp-shell");
 var elixir = require('laravel-elixir');
+var uglify = require('gulp-uglify');
+
 
 /*
  |--------------------------------------------------------------------------
@@ -12,6 +15,22 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
+
+elixir.extend('uglify', function() {
+
+  gulp.task('uglify', function() {
+
+    gulp.src('public/js/main.js')
+        .pipe(uglify())
+        .pipe(ext('min.js'))
+        .pipe(gulp.dest('public/js/min'));
+  });
+
+  return this.queueTask('uglify');
+
+});
+
+
 
 elixir(function(mix) {
     mix.less('app.less');
@@ -27,7 +46,8 @@ elixir(function(mix) {
 });
 
 elixir(function(mix) {
-    mix.scripts(['jquery.js', 'progressbar.js'], 'public/js/main.js');
+    mix.scripts(['jquery.js', 'progressbar.js'], 'public/js/main.js')
+    .uglify();
 });
 
 

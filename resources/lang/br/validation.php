@@ -57,7 +57,7 @@ return [
     "not_in"               => "The selected :attribute is invalid.",
     "numeric"              => "The :attribute must be a number.",
     "regex"                => "The :attribute format is invalid.",
-    "required"             => "The :attribute field is required.",
+    "required"             => "O campo :attribute é obrigatório.",
     "required_if"          => "The :attribute field is required when :other is :value.",
     "required_with"        => "The :attribute field is required when :values is present.",
     "required_with_all"    => "The :attribute field is required when :values is present.",
@@ -88,6 +88,9 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+        ],
+        'file' => [
+            'required' => 'O campo Arquivo é obrigatório',
         ],
     ],
 

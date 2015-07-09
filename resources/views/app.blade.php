@@ -11,7 +11,7 @@
     <Script src="http://code.jquery.com/jquery-2.1.1-rc2.min.js" ></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
 
-    <script src="{{ asset('/js/script.js') }}"></script>
+    <script src="{{ asset('/js/min/main.min.js') }}"></script>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/main.css') }}" rel="stylesheet">

@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Input;
 use Config;
 use Image;
-use Request;
+use Illuminate\Http\Request;
+use Validator;
 use App\Models\State;
 use App\Models\EstateImages;
+use Lang;
 
 class StateController extends Controller
 {
@@ -36,10 +38,27 @@ class StateController extends Controller
     {
         return $stateId;
     }
-    public function store()
+    public function store(Request $request)
     {
 
+        echo Lang::getLocale();
+        $validator = Validator::make($request->all(), [
+            'file' => 'required',
+        ]);
+        $messages = $validator->errors();
+        echo '<ul>';
+        foreach ($messages->all('<li>:message</li>') as $message) {
+            echo $message;
+        }
+        echo '</ul>';
+
+        dd($messages);
+        if ($validator) {
+            dd('Arquivo obrigatorio');
+        }
         $file = Input::file('file');
+
+
         $allowedExts = Config::get('media.allowedExts');
         $allowedMimes = Config::get('media.allowedMimes');
         $temp = explode(".", $file->getClientOriginalName());
