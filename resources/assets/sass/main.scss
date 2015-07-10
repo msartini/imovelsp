@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : marciosartini
 */
 
+// Import Bootstrap Compass integration
+@import "bootstrap-compass";
+// Import Bootstrap for Sass
+@import "bootstrap";
+
 html {
     font-size: 80% !important;
 }
