@@ -11,7 +11,7 @@
  *
  * @author MARCIO SARTINI
  */
-namespace App\Http\Models;
+namespace Casaoeste\Http\Models;
 
 
 

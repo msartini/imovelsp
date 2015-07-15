@@ -10,12 +10,12 @@
  * @link     medias para todas as fotos e videos dos imoveis
  */
 
-namespace App\Http\Controllers;
+namespace Casaoeste\Http\Controllers;
 
-use App\Repositories\DbUserRepository;
-use App\Repositories\MediaRepository;
-use App\Models\Media;
-use App\Http\Controllers\Controller;
+use Casaoeste\Repositories\DbUserRepository;
+use Casaoeste\Repositories\MediaRepository;
+use Casaoeste\Models\Media;
+use Casaoeste\Http\Controllers\Controller;
 
 /**
  * Trata todos os tipos de medias que passam por imoveis

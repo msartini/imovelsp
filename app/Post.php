@@ -1,8 +1,8 @@
 <?php
-namespace App;
+namespace Casaoeste;
 
 use Eloquent;
-use App\Comment;
+use Casaoeste\Comment;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +21,6 @@ class Post extends Eloquent
 
     public function comments()
     {
-        return $this->hasMany('App\Comment', 'post_id');
+        return $this->hasMany('Casaoeste\Comment', 'post_id');
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repositories;
+namespace Casaoeste\Repositories;
 
-use App\Models\Category;
-use App\Models\EstateImages;
-use App\Interfaces\EstateImageInterface;
+use Casaoeste\Models\Category;
+use Casaoeste\Models\EstateImages;
+use Casaoeste\Interfaces\EstateImageInterface;
 use Config;
 use File;
 use Image;

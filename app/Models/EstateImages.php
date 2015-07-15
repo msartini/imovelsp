@@ -1,8 +1,8 @@
 <?php
-namespace App\Models;
+namespace Casaoeste\Models;
 
 use Eloquent;
-use App\Comment;
+use Casaoeste\Comment;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

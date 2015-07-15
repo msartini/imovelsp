@@ -1,8 +1,8 @@
-<?php  namespace App\Http\Repositories;
+<?php  namespace Casaoeste\Http\Repositories;
 
-use App\Http\Interfaces\PostRepositoryInterface;
-use App\Post;
-use App\Comment;
+use Casaoeste\Http\Interfaces\PostRepositoryInterface;
+use Casaoeste\Post;
+use Casaoeste\Comment;
 
 class PostRepository implements PostRepositoryInterface
 {

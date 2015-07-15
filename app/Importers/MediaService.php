@@ -1,7 +1,7 @@
 <?php
-namespace App\Importers;
+namespace Casaoeste\Importers;
 
-use App\Http\Repositories\DbUserRepository;
+use Casaoeste\Http\Repositories\DbUserRepository;
 
 /**
 *

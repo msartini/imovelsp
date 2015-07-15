@@ -1,10 +1,10 @@
-<?php namespace App\Console\Commands;
+<?php namespace Casaoeste\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-use App\Importers\MediaService;
+use Casaoeste\Importers\MediaService;
 
 class MediaImporter extends Command
 {

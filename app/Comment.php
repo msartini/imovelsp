@@ -1,7 +1,7 @@
-<?php namespace App;
+<?php namespace Casaoeste;
 
 use Eloquent;
-use App\Post;
+use Casaoeste\Post;
 
 class Comment extends Eloquent
 {
@@ -21,6 +21,6 @@ class Comment extends Eloquent
     // DEFINE RELATIONSHIPS --------------------------------------------------
     public function post()
     {
-        return $this->belongsTo('App\Post');
+        return $this->belongsTo('Casaoeste\Post');
     }
 }

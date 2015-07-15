@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Casaoeste\Http\Controllers;
 
 /**
  * Description of Postcontroller
@@ -6,10 +6,10 @@
  * @author marciosartini
  */
 
-use App\Post;
-use App\Comment;
+use Casaoeste\Post;
+use Casaoeste\Comment;
 
-use App\Http\Repositories\PostRepository;
+use Casaoeste\Http\Repositories\PostRepository;
 
 use Carbon\Carbon;
 

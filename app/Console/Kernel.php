@@ -1,4 +1,4 @@
-<?php namespace App\Console;
+<?php namespace Casaoeste\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -12,8 +12,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        'App\Console\Commands\Inspire',
-        'App\Console\Commands\MediaImporter', //comando mediaimporter
+        'Casaoeste\Console\Commands\Inspire',
+        'Casaoeste\Console\Commands\MediaImporter', //comando mediaimporter
     ];
 
     /**

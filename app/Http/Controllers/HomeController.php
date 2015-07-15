@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Casaoeste\Http\Controllers;
 
 class HomeController extends Controller
 {
@@ -19,7 +19,7 @@ class HomeController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return \App\Http\Controllers\HomeController
+     * @return \Casaoeste\Http\Controllers\HomeController
      */
     public function __construct()
     {

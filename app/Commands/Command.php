@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace Casaoeste\Commands;
 
 abstract class Command {
 

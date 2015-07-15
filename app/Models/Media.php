@@ -11,7 +11,7 @@
  * @license  http://grupofolha.com.br Thorin
  * @link     medias para todas as fotos e videos dos imoveis
  */
- namespace App\Models;
+ namespace Casaoeste\Models;
 
 use Eloquent;
 

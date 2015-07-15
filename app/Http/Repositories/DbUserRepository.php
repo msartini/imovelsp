@@ -1,7 +1,7 @@
-<?php namespace App\Http\Repositories;
+<?php namespace Casaoeste\Http\Repositories;
 
-use App\Http\Interfaces\UserRepositoryInterface;
-use App\User;
+use Casaoeste\Http\Interfaces\UserRepositoryInterface;
+use Casaoeste\User;
 
 class DbUserRepository implements UserRepositoryInterface
 {

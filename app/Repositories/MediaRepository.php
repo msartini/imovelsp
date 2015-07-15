@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repositories;
+namespace Casaoeste\Repositories;
 
-use App\Models\Category;
-use App\Models\Media;
-use App\Interfaces\MediaInterface;
+use Casaoeste\Models\Category;
+use Casaoeste\Models\Media;
+use Casaoeste\Interfaces\MediaInterface;
 
 class MediaRepository implements MediaInterface
 {
