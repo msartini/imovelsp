@@ -1,8 +1,8 @@
 <?php
-namespace App\Models;
+namespace Casaoeste\Models;
 
 use Eloquent;
-use App\Models\Category;
+use Casaoeste\Models\Category;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +21,6 @@ class State extends Eloquent
 
     public function category()
     {
-        return $this->hasOne('App\Category', 'category_id');
+        return $this->hasOne('Casaoeste\Category', 'category_id');
     }
 }

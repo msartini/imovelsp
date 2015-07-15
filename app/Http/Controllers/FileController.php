@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace Casaoeste\Http\Controllers;
 
 /**
  * Created by PhpStorm.

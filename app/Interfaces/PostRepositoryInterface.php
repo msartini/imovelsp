@@ -1,4 +1,4 @@
-<?php namespace App\Interfaces;
+<?php namespace Casaoeste\Interfaces;
 
 interface PostRepositoryInterface
 {

@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Casaoeste\Http\Controllers;
 
 /**
  * Description of ProdutoController
@@ -7,7 +7,7 @@
  */
 
 
-use App\Http\Repositories\DbUserRepository;
+use Casaoeste\Http\Repositories\DbUserRepository;
 
 /**
  *  Description of ProdutoController
@@ -29,7 +29,7 @@ class ProdutoController extends Controller
      *
      * @param DbUserRepository $dbUserRepository Injeçao de dependencia de Users
      *
-     * @return \App\Http\Controllers\ProdutoController
+     * @return \Casaoeste\Http\Controllers\ProdutoController
      */
     public function __construct(DbUserRepository $dbUserRepository)
     {

@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Casaoeste\Http\Controllers;
 
 use Mail;
-use \App\Http\Models\Frontibrary;
+use \Casaoeste\Http\Models\Frontibrary;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -21,7 +21,7 @@ class UsuarioController extends Controller {
     /**
      * Create a new controller instance.
      *
-     * @return \App\Http\Controllers\UsuarioController
+     * @return \Casaoeste\Http\Controllers\UsuarioController
      */
     public function __construct()
     {

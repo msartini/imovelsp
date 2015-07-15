@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Casaoeste\Http\Controllers;
 
 use Input;
 use Config;
 use Image;
 use Illuminate\Http\Request;
-use App\Models\State;
-use App\Models\EstateImages;
+use Casaoeste\Models\State;
+use Casaoeste\Models\EstateImages;
 use Lang;
-use App\Validators\ImoveisValidation;
-use App\Repositories\EstateImageRepository;
+use Casaoeste\Validators\ImoveisValidation;
+use Casaoeste\Repositories\EstateImageRepository;
 
 class StateController extends Controller
 {

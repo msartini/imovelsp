@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Casaoeste\Http\Controllers;
 
 /**
  * Description of FornecedorController

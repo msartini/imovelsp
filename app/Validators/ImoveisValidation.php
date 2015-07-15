@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Validators;
+namespace Casaoeste\Validators;
 
 use Illuminate\Http\Request;
 use Validator;

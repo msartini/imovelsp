@@ -5,10 +5,10 @@
  * Date: 6/6/15
  * Time: 17:52
  */
-namespace App\Modules\Admin\Repositories;
+namespace Casaoeste\Modules\Admin\Repositories;
 
-use App\Modules\Admin\Interfaces\StateInterface;
-use App\State;
+use Casaoeste\Modules\Admin\Interfaces\StateInterface;
+use Casaoeste\State;
 
 class StateRepositories implements StateInterface
 {

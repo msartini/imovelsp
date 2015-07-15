@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Casaoeste\Http\Controllers;
 
 use View;
 use Input;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Casaoeste\Http\Requests;
+use Casaoeste\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 

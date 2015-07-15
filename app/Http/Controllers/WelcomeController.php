@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace Casaoeste\Http\Controllers;
 
 class WelcomeController extends Controller
 {
@@ -18,7 +18,7 @@ class WelcomeController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return \App\Http\Controllers\WelcomeController
+     * @return \Casaoeste\Http\Controllers\WelcomeController
      */
     public function __construct()
     {

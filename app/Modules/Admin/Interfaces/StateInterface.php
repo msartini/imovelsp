@@ -6,7 +6,7 @@
  * Time: 17:39
  */
 
-namespace App\Modules\Admin\Interfaces;
+namespace Casaoeste\Modules\Admin\Interfaces;
 
 interface StateInterface
 {

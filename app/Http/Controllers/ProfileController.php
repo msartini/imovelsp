@@ -1,6 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Casaoeste\Http\Controllers;
 
-use App\Http\Models\Frontibrary;
+use Casaoeste\Http\Models\Frontibrary;
 use Symfony\Component\HttpFoundation\Response;
 use view;
 
@@ -19,7 +19,7 @@ class ProfileController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return \App\Http\Controllers\ProfileController
+     * @return \Casaoeste\Http\Controllers\ProfileController
      */
     public function __construct()
     {
