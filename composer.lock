@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7078c46a9366cc12efc4edab532b8aec",
+    "hash": "d29fdece215ebfbb60dfe7a6dd3e14e5",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -718,7 +718,7 @@
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",

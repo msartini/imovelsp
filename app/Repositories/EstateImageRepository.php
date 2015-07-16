@@ -23,18 +23,20 @@ class EstateImageRepository implements EstateImageInterface
         return $this->media->all();
     }
 
-    public function getById($id)
+    public function getById($idMedia)
     {
-        return $this->media->find($id);
+        return $this->media->find($idMedia);
     }
 
     public function newImage(Array $files)
     {
+
         try {
+            $sequence = 0;
             foreach ($files as $file) {
                 $temp = explode(".", $file->getClientOriginalName());
                 $extension = end($temp);
-                $newFileName = date('Ymd-his');
+                $newFileName = date('Ymd-his').'-'.++$sequence;
 
                 $estateImage = new EstateImages();
 
@@ -56,8 +58,10 @@ class EstateImageRepository implements EstateImageInterface
 
                 Image::make(Config::get('media.pathSaveFile').'/'.$newFileName . '.' .  $extension)->fit(800, 200)->save(Config::get('media.pathSaveFile').'/'. $newFileName. '-fit-800-300.' . $extension);
             }
+
             return true;
         } catch (Exception $e) {
+            var_dump($e);
             return false;
         }
     }

@@ -2,25 +2,22 @@
 
 namespace Casaoeste\Http\Controllers;
 
-use Input;
-use Config;
-use Image;
 use Illuminate\Http\Request;
 use Casaoeste\Models\State;
-use Casaoeste\Models\EstateImages;
-use Lang;
 use Casaoeste\Validators\ImoveisValidation;
 use Casaoeste\Repositories\EstateImageRepository;
 
 class StateController extends Controller
 {
-
     protected $states;
     protected $media;
     protected $validator;
 
-    public function __construct(State $states, EstateImages $images, ImoveisValidation $validation, EstateImageRepository $media)
-    {
+    public function __construct(
+        State $states,
+        ImoveisValidation $validation,
+        EstateImageRepository $media
+    ) {
         $this->middleware('auth');
         $this->states = $states;
         $this->validator = $validation;
@@ -32,12 +29,10 @@ class StateController extends Controller
         return $this->states->all();
     }
 
-
     public function create()
     {
         return view('estate.create');
     }
-
 
     public function show($stateId)
     {
@@ -65,6 +60,6 @@ class StateController extends Controller
         if (!$estateImage) {
             die('Erro criando imagens');
         }
-        echo "Imóvel salvo com sucesso";
+        echo 'Imóvel salvo com sucesso';
     }
 }
