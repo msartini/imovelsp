@@ -6,7 +6,7 @@ $(function(){
              $(".progress").show();
         },
         uploadProgress:function(event,position,total,percentComplete){
-            console.log(percentComplete);
+            //console.log(percentComplete);
             //$(".progress-bar").width(percentComplete+'%'); //dynamicaly change the progress bar width
             $(".progress-bar").css('width', percentComplete+'%'); //dynamicaly change the progress bar width
             $(".sr-only").html(percentComplete+'%'); // show the percentage number
@@ -18,8 +18,12 @@ $(function(){
             console.log(response);
             if(response.responseText=='0')
                 $(".image").html("Error"); //display error if response is 0
-            else
+            else {
+                $('#id').val(response.responseJSON.id);
                 $(".image").html(response.responseText);
+
+            }
+            $('#file').val('');
                 // show the image after success
         }
      });

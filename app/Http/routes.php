@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
+
 Route::group(array('prefix' => 'imagens'), function () {
 
     Route::get('/criar', [ 'as' => 'images.criar', 'uses' => 'UploadImageController@create']);
@@ -38,10 +41,10 @@ Route::group(array('prefix' => 'arquivos'), function () {
  */
 Route::group(array('prefix' => 'admin'), function () {
     Route::group(array('prefix' => 'imoveis'), function () {
-        Route::get('/criar', [ 'as' => 'estate.criar', 'uses' => 'StateController@create']);
-        Route::get('/', [ 'as' => 'state.index', 'uses' => 'StateController@index']);
-        Route::get('/{estateId}', ['as' => 'state.show', 'uses' => 'StateController@show']);
-        Route::post('/salvar', [ 'as' => 'admin.estate.store', 'uses' => 'StateController@store']);
+        Route::get('/criar', [ 'as' => 'estate.criar', 'uses' => 'EstateController@create']);
+        Route::get('/', [ 'as' => 'state.index', 'uses' => 'EstateController@index']);
+        Route::get('/{estateId}', ['as' => 'state.show', 'uses' => 'EstateController@show']);
+        Route::post('/salvar', [ 'as' => 'admin.estate.store', 'uses' => 'EstateController@store']);
     });
 });
 

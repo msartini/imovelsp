@@ -2,6 +2,7 @@
 
 namespace Casaoeste\Repositories;
 
+use Casaoeste\Models\Estate;
 use Casaoeste\Models\Category;
 use Casaoeste\Models\EstateImages;
 use Casaoeste\Interfaces\EstateImageInterface;
@@ -28,7 +29,7 @@ class EstateImageRepository implements EstateImageInterface
         return $this->media->find($idMedia);
     }
 
-    public function newImage(Array $files)
+    public function newImage(Array $files, Estate $estate)
     {
 
         try {
@@ -36,12 +37,13 @@ class EstateImageRepository implements EstateImageInterface
             foreach ($files as $file) {
                 $temp = explode(".", $file->getClientOriginalName());
                 $extension = end($temp);
-                $newFileName = date('Ymd-his').'-'.++$sequence;
+                $newFileName = $estate->id . '_' . date('Ymd-his').'-' . ++$sequence;
 
                 $estateImage = new EstateImages();
 
+                $estateImage->estate_id = $estate->id;
                 $estateImage->file_original_name = $file->getClientOriginalName();
-                $estateImage->filename = $file->getClientOriginalName();
+                $estateImage->filename = $newFileName . '.' . $extension;
                 $estateImage->extension = $extension;
                 $estateImage->fullpath = Config::get('media.pathSaveFile') . '/' .  $newFileName . '.' . $extension;
                 $estateImage->save();

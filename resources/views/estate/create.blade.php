@@ -19,11 +19,12 @@
                             'novalidate' => 'novalidate',
                             'files' => true)) !!}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        {!! Form::hidden('id', '0', array('id' => 'id')) !!}
 
                         <div class="form-group">
                             <label class="col-md-4 control-label">Nome</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                {!! Form::text('name', Input::old('name'), array('id' => 'name', 'class' => 'form-control')) !!}
                             </div>
                         </div>
 

@@ -27,7 +27,7 @@ class CreateTableImoveisCategory extends Migration
      */
     public function down()
     {
-        Schema::drop('category');
+        Schema::dropIfExists('categories');
     }
 
 }

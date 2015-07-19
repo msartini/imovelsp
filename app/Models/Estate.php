@@ -15,12 +15,19 @@ use Casaoeste\Models\Category;
  *
  * @author marcios sartini
  */
-class State extends Eloquent
+class Estate extends Eloquent
 {
+
     protected $table = 'estates';
+
 
     public function category()
     {
         return $this->hasOne('Casaoeste\Category', 'category_id');
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }
