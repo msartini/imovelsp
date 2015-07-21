@@ -3,30 +3,30 @@
 namespace Casaoeste\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Casaoeste\Models\State;
+use Casaoeste\Repositories\EstateRepository;
 use Casaoeste\Validators\ImoveisValidation;
 use Casaoeste\Repositories\EstateImageRepository;
 
-class StateController extends Controller
+class EstateController extends Controller
 {
-    protected $states;
+    protected $estate;
     protected $media;
     protected $validator;
 
     public function __construct(
-        State $states,
         ImoveisValidation $validation,
-        EstateImageRepository $media
+        EstateImageRepository $media,
+        EstateRepository $estate
     ) {
         $this->middleware('auth');
-        $this->states = $states;
+        $this->estate = $estate;
         $this->validator = $validation;
         $this->media = $media;
     }
 
     public function index()
     {
-        return $this->states->all();
+        return $this->estate->all();
     }
 
     public function create()
@@ -40,6 +40,7 @@ class StateController extends Controller
     }
     public function store(Request $request)
     {
+
         $validator = $this->validator->validate($request->all());
 
         $messages = $validator->errors();
@@ -53,13 +54,17 @@ class StateController extends Controller
             dd('Campos obrigatórios');
         }
         $estateImage = true;
-        if (!$request->file('file') == null) {
-            $estateImage = $this->media->newImage($request->file('file'));
+
+        $estate = $this->estate->storeEstate($request);
+
+        //Salva imagens
+        if (!$request->file('file') == null && $estate->id) {
+            $estateImage = $this->media->newImage($request->file('file'), $estate);
         }
 
         if (!$estateImage) {
             die('Erro criando imagens');
         }
-        echo 'Imóvel salvo com sucesso';
+        return $estate;
     }
 }

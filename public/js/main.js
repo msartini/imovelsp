@@ -1,1 +1,36 @@
-$(function(){$("#myForm").ajaxForm({beforeSend:function(){$(".progress").show()},uploadProgress:function(o,s,e,r){console.log(r),$(".progress-bar").css("width",r+"%"),$(".sr-only").html(r+"%")},success:function(){},complete:function(o){console.log(o),$(".image").html("0"==o.responseText?"Error":o.responseText)}}),$(".progress").hide()});
+
+$(function(){
+
+     // function from the jquery form plugin
+     $('#myForm').ajaxForm({
+        beforeSend:function(){
+             $(".progress").show();
+        },
+        uploadProgress:function(event,position,total,percentComplete){
+            //console.log(percentComplete);
+            //$(".progress-bar").width(percentComplete+'%'); //dynamicaly change the progress bar width
+            $(".progress-bar").css('width', percentComplete+'%'); //dynamicaly change the progress bar width
+            $(".sr-only").html(percentComplete+'%'); // show the percentage number
+        },
+        success:function(){
+            //$(".progress").hide(); //hide progress bar on success of upload
+        },
+        complete:function(response){
+            console.log(response);
+            if(response.responseText=='0')
+                $(".image").html("Error"); //display error if response is 0
+            else {
+                $('#id').val(response.responseJSON.id);
+                $(".image").html(response.responseText);
+
+            }
+            $('#file').val('');
+                // show the image after success
+        }
+     });
+
+     //set the progress bar to be hidden on loading
+     $(".progress").hide();
+});
+
+//# sourceMappingURL=main.js.map
