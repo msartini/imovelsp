@@ -16,18 +16,27 @@ class EstateRepository implements EstateInterface
         $this->estate = $estate;
         $this->estateResource = $estateResource;
     }
-    public function getEstateByid()
+
+    public function all()
     {
-        return true;
+        return $this->estate->all();
     }
+
+    public function getEstateByid($hashId)
+    {
+        return $this->estate->find($hashId);
+    }
+
     public function getEstateByName()
     {
         return true;
     }
+
     public function getEstateBySlug()
     {
         return true;
     }
+
     public function storeEstate(Request $request)
     {
         $fillableFields = [

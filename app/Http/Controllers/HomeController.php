@@ -2,6 +2,8 @@
 
 namespace Casaoeste\Http\Controllers;
 
+use Auth;
+
 class HomeController extends Controller
 {
 
@@ -33,7 +35,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $authenticated = Auth::check();
+        return view('home')->with('auth', $authenticated);
+
     }
 
     public function listagemImoveis()

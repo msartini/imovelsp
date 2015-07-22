@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Casaoeste\Http\Controllers\Auth;
 

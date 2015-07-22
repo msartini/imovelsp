@@ -8,7 +8,9 @@
 				<div class="panel-heading">Home</div>
 
 				<div class="panel-body">
-					You are logged in!
+					@if (!$auth)
+						USUARIO NAO LOGADO
+					@endif
 				</div>
 			</div>
 		</div>

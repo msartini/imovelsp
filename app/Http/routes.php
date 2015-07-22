@@ -39,11 +39,12 @@ Route::group(array('prefix' => 'arquivos'), function () {
 /*
  * @route admin
  */
+Route::model('estate', 'Casaoeste\Models\Estate');
 Route::group(array('prefix' => 'admin'), function () {
     Route::group(array('prefix' => 'imoveis'), function () {
+        Route::get('/{estate}/editar', ['as' => 'state.show', 'uses' => 'EstateController@show']);
         Route::get('/criar', [ 'as' => 'estate.criar', 'uses' => 'EstateController@create']);
         Route::get('/', [ 'as' => 'state.index', 'uses' => 'EstateController@index']);
-        Route::get('/{estateId}', ['as' => 'state.show', 'uses' => 'EstateController@show']);
         Route::post('/salvar', [ 'as' => 'admin.estate.store', 'uses' => 'EstateController@store']);
     });
 });

@@ -2,6 +2,7 @@
 
 namespace Casaoeste\Http\Controllers;
 
+use Casaoeste\Models\Estate;
 use Illuminate\Http\Request;
 use Casaoeste\Repositories\EstateRepository;
 use Casaoeste\Validators\ImoveisValidation;
@@ -34,9 +35,9 @@ class EstateController extends Controller
         return view('estate.create');
     }
 
-    public function show($stateId)
+    public function show(Estate $estate)
     {
-        return $stateId;
+        dd($estate);
     }
     public function store(Request $request)
     {
