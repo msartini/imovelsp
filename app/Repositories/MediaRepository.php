@@ -2,9 +2,9 @@
 
 namespace Casaoeste\Repositories;
 
+use Casaoeste\Interfaces\MediaInterface;
 use Casaoeste\Models\Category;
 use Casaoeste\Models\Media;
-use Casaoeste\Interfaces\MediaInterface;
 
 class MediaRepository implements MediaInterface
 {

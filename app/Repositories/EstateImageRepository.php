@@ -2,10 +2,10 @@
 
 namespace Casaoeste\Repositories;
 
-use Casaoeste\Models\Estate;
-use Casaoeste\Models\Category;
-use Casaoeste\Models\EstateImages;
 use Casaoeste\Interfaces\EstateImageInterface;
+use Casaoeste\Models\Category;
+use Casaoeste\Models\Estate;
+use Casaoeste\Models\EstateImages;
 use Config;
 use File;
 use Image;
@@ -54,8 +54,8 @@ class EstateImageRepository implements EstateImageInterface
 
                 Image::make(Config::get('media.pathSaveFile').'/'.$newFileName . '.' .  $extension)->widen(400)->greyscale()->save(Config::get('media.pathSaveFile').'/'. $newFileName. '-400' . '.' . $extension);
 
+                // Imagem preto e branco
                 //Image::make(Config::get('media.pathSaveFile').'/'.$newFileName . '.' .  $extension)->widen(800)->greyscale()->save(Config::get('media.pathSaveFile').'/'. $newFileName. '-800.' . $extension);
-
                 //Image::make(Config::get('media.pathSaveFile').'/'.$newFileName . '.' .  $extension)->crop(800, 200, 0, 325)->save(Config::get('media.pathSaveFile').'/'. $newFileName. '-crop-800.' . $extension);
 
                 Image::make(Config::get('media.pathSaveFile').'/'.$newFileName . '.' .  $extension)->fit(800, 200)->save(Config::get('media.pathSaveFile').'/'. $newFileName. Config::get('media.image800300') . '.' . $extension);

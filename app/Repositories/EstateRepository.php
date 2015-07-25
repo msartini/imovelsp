@@ -1,10 +1,10 @@
 <?php
 namespace Casaoeste\Repositories;
 
-use Illuminate\Http\Request;
 use Casaoeste\Models\Estate;
-use Casaoeste\Resources\Estate as EstateResource;
 use Casaoeste\Interfaces\EstateInterface as EstateInterface;
+use Casaoeste\Resources\Estate as EstateResource;
+use Illuminate\Http\Request;
 
 class EstateRepository implements EstateInterface
 {
